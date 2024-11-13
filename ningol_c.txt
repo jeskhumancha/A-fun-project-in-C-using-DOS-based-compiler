@@ -1,0 +1,375 @@
+#include<stdio.h>
+#include<dos.h>
+#include<conio.h>
+#include<stdlib.h>
+#include<graphics.h>
+void data1();
+void data2();
+void data3();
+void chei1();
+void boom();
+void main()
+{
+
+	 clrscr();
+	 int gdriver = DETECT, gmode, errorcode;
+	  //int gdriver = EGA, gmode = EGAHI, errorcode;
+   /* initialize graphics and local variables */
+   initgraph(&gdriver, &gmode, "C:\\TURBOC3\\BGI");
+
+   /* read result of initialization */
+   errorcode = graphresult();
+   if (errorcode != grOk)  /* an error occurred */
+   {
+      printf("Graphics error: %s\n", grapherrormsg(errorcode));
+      printf("Press any key to halt:");
+      getch();
+      exit(1); /* terminate with an error code */
+   }
+
+	 data1();
+	 boom();
+	 clearviewport();
+	 data2();
+	 boom();
+	 clearviewport();
+	 data3();
+	 boom();
+	 clearviewport();
+	 chei1();
+	 getch();
+	 closegraph();
+	 restorecrtmode();
+}
+    void chei1()
+	 {
+	 setbkcolor(BLACK);
+	 delay(600);
+	 setcolor(GREEN);
+	 settextstyle(10,0,4);
+	 outtextxy(5,220,"HAPPY");
+	 outtextxy(180,220,"NINGOL CHAKOUBA");
+	 setcolor(GREEN);
+	 settextstyle(10,0,2);
+	 outtextxy(2,218,"\"                                            \"");
+
+	setcolor(RED);
+	rectangle(60,10,200,25);
+	setfillstyle(SOLID_FILL,RED);
+	floodfill(61,11,RED);
+
+
+	setcolor(WHITE);
+	rectangle(60,25,200,40);
+	setfillstyle(SOLID_FILL,WHITE);
+	floodfill(61,26,WHITE);
+
+	setcolor(0);
+	rectangle(60,40,200,55);
+	setfillstyle(SOLID_FILL,0);
+	floodfill(61,41,0);
+
+	setcolor(YELLOW);
+	rectangle(60,55,200,70);
+	setfillstyle(SOLID_FILL,YELLOW);
+	floodfill(61,56,YELLOW);
+
+
+	setcolor(MAGENTA);
+	rectangle(60,70,200,85);
+	setfillstyle(SOLID_FILL,MAGENTA);
+	floodfill(61,71,MAGENTA);
+
+	setcolor(CYAN);
+	rectangle(60,85,200,100);
+	setfillstyle(SOLID_FILL,CYAN);
+	floodfill(61,86,CYAN);
+
+	setcolor(GREEN);
+	rectangle(60,100,200,115);
+	setfillstyle(SOLID_FILL,GREEN);
+	floodfill(61,101,GREEN);
+	  delay(800);
+	 //cleardevice();
+	 }
+	 void data1()
+      {
+	int count=300,x=70,y=400,y1,q1,cnt1=9,cnt2=9,cnt3=9,cnt4=9,i,cl=1,x1,y2;
+	//initgraph(&gd,&gm,"C:\\TURBOC3\\BGI");
+	 int freq=2200;int j=5;
+	//clrscr();
+	setbkcolor(BLACK);
+	while(count--)
+	{
+	 delay(2);
+	settextstyle(11,0,1);
+	setcolor(BLACK);
+	sound(freq);
+	 freq=freq+j;
+	//delay(1);
+	outtextxy(x,y1,"\*");
+	setcolor(RED);
+	outtextxy(x,y,"\*");
+	y1=y;
+	y-=1;
+       }
+       nosound();
+
+	x1=x+5;y2=y1-9;
+	while(cnt1--)
+       {
+	setcolor(cl);
+	outtextxy(x1,y2,"\*");
+
+	x1=x1+(cl+2);y2=y2-9;
+	cl=cl+1;
+       }
+       x1=x+5;y2=y1-9;i=1;cnt1=9;
+	while(cnt1--)
+       {
+	setcolor(i);outtextxy(x1,y2,"\~");i++;x1=x1+10;
+       }
+	x1=x+45;y2=y1-45;settextstyle(1,0,3);setcolor(14);outtextxy(x1,y2,"\*");
+	x1=x-5;y2=y1-9;i=1;
+	settextstyle(11,0,1);
+       while(cnt2--)
+       {
+	setcolor(i);
+	outtextxy(x1,y2,"\*");
+	x1=x1-(i+2);y2=y2-9;
+	i++;
+       }
+       x1=x-5;y2=y1-9;i=1;cnt2=9;
+	while(cnt2--)
+       {
+	setcolor(i);outtextxy(x1,y2,"\~");i++;x1=x1-10;
+       }
+       x1=x-45;y2=y1-45;settextstyle(1,0,3);setcolor(14);outtextxy(x1,y2,"\*");
+	settextstyle(11,0,1);
+	x1=x+5;y2=y1+9;i=1;
+       while(cnt3--)
+       {
+	setcolor(i);
+	outtextxy(x1,y2,"\*");
+	x1=x1+(i+2);y2=y2+9;
+	i++;
+       }
+       x1=x+5;y2=y1+9;i=1;cnt3=9;
+	while(cnt3--)
+       {
+	setcolor(i);outtextxy(x1,y2,"\~");i++;x1=x1+10;
+       }
+	x1=x+45;y2=y1+25;settextstyle(1,0,3);setcolor(14);outtextxy(x1,y2,"\*");
+	settextstyle(11,0,1);
+	x1=x-5;y2=y1+9;i=1;
+       while(cnt4--)
+       {
+	setcolor(i);
+	outtextxy(x1,y2,"\*");
+	x1=x1-(i+2);y2=y2+9;
+	i++;
+       }
+       x1=x-5;y2=y1+9;i=1;cnt4=9;
+	while(cnt4--)
+       {
+	setcolor(i);outtextxy(x1,y2,"\~");i++;x1=x1-10;
+       }
+       x1=x-45;y2=y1+25;settextstyle(1,0,3);setcolor(14);outtextxy(x1,y2,"\*");
+   }
+     void data2()
+      {
+	int count=300,x=300,y=400,y1,q1,cnt1=9,cnt2=9,cnt3=9,cnt4=9,i,cl=1,x1,y2;
+	//initgraph(&gd,&gm,"C:\\TURBOC3\\BGI");
+	    int freq=2200;int j=5;
+	//clrscr();
+	setbkcolor(BLACK);
+	while(count--)
+	{
+       //sound(random(100));
+       delay(1);
+	settextstyle(11,0,1);
+	setcolor(BLACK);
+	 sound(freq);
+	 freq=freq+j;
+	outtextxy(x,y1,"\*");
+	setcolor(RED);
+	outtextxy(x,y,"\*");
+	y1=y;
+	y-=1;
+       }
+       nosound();
+
+	x1=x+5;y2=y1-9;
+	while(cnt1--)
+       {
+	setcolor(cl);
+	outtextxy(x1,y2,"\*");
+
+	x1=x1+(cl+2);y2=y2-9;
+	cl=cl+1;
+       }
+       x1=x+5;y2=y1-9;i=1;cnt1=9;
+	while(cnt1--)
+       {
+	setcolor(i);outtextxy(x1,y2,"\~");i++;x1=x1+10;
+       }
+	x1=x+45;y2=y1-45;settextstyle(1,0,3);setcolor(14);outtextxy(x1,y2,"\*");
+	x1=x-5;y2=y1-9;i=1;
+	settextstyle(11,0,1);
+       while(cnt2--)
+       {
+	setcolor(i);
+	outtextxy(x1,y2,"\*");
+	x1=x1-(i+2);y2=y2-9;
+	i++;
+       }
+       x1=x-5;y2=y1-9;i=1;cnt2=9;
+	while(cnt2--)
+       {
+	setcolor(i);outtextxy(x1,y2,"\~");i++;x1=x1-10;
+       }
+       x1=x-45;y2=y1-45;settextstyle(1,0,3);setcolor(14);outtextxy(x1,y2,"\*");
+	settextstyle(11,0,1);
+	x1=x+5;y2=y1+9;i=1;
+       while(cnt3--)
+       {
+	setcolor(i);
+	outtextxy(x1,y2,"\*");
+	x1=x1+(i+2);y2=y2+9;
+	i++;
+       }
+       x1=x+5;y2=y1+9;i=1;cnt3=9;
+	while(cnt3--)
+       {
+	setcolor(i);outtextxy(x1,y2,"\~");i++;x1=x1+10;
+       }
+	x1=x+45;y2=y1+25;settextstyle(1,0,3);setcolor(14);outtextxy(x1,y2,"\*");
+	settextstyle(11,0,1);
+	x1=x-5;y2=y1+9;i=1;
+       while(cnt4--)
+       {
+	setcolor(i);
+	outtextxy(x1,y2,"\*");
+	x1=x1-(i+2);y2=y2+9;
+	i++;
+       }
+       x1=x-5;y2=y1+9;i=1;cnt4=9;
+	while(cnt4--)
+       {
+	setcolor(i);outtextxy(x1,y2,"\~");i++;x1=x1-10;
+       }
+       x1=x-45;y2=y1+25;settextstyle(1,0,3);setcolor(14);outtextxy(x1,y2,"\*");
+
+    }
+
+    void data3()
+      {
+	int count=300,x=530,y=400,y1,q1,cnt1=9,cnt2=9,cnt3=9,cnt4=9,i,cl=1,x1,y2;
+	     int freq=2200;int j=5;
+	setbkcolor(BLACK);
+	while(count--)
+	{
+       //sound(random(100));
+       delay(1);
+	settextstyle(11,0,1);
+	setcolor(BLACK);
+	 sound(freq);
+	 freq=freq+j;
+	outtextxy(x,y1,"\*");
+	setcolor(RED);
+	outtextxy(x,y,"\*");
+	y1=y;
+	y-=1;
+       }
+       nosound();
+	x1=x+5;y2=y1-9;
+	while(cnt1--)
+       {
+	setcolor(cl);
+	outtextxy(x1,y2,"\*");
+
+	x1=x1+(cl+2);y2=y2-9;
+	cl=cl+1;
+       }
+       x1=x+5;y2=y1-9;i=1;cnt1=9;
+	while(cnt1--)
+       {
+	setcolor(i);outtextxy(x1,y2,"\~");i++;x1=x1+10;
+       }
+	x1=x+45;y2=y1-45;settextstyle(1,0,3);setcolor(14);outtextxy(x1,y2,"\*");
+	x1=x-5;y2=y1-9;i=1;
+	settextstyle(11,0,1);
+       while(cnt2--)
+       {
+	setcolor(i);
+	outtextxy(x1,y2,"\*");
+	x1=x1-(i+2);y2=y2-9;
+	i++;
+       }
+       x1=x-5;y2=y1-9;i=1;cnt2=9;
+	while(cnt2--)
+       {
+	setcolor(i);outtextxy(x1,y2,"\~");i++;x1=x1-10;
+       }
+       x1=x-45;y2=y1-45;settextstyle(1,0,3);setcolor(14);outtextxy(x1,y2,"\*");
+	settextstyle(11,0,1);
+	x1=x+5;y2=y1+9;i=1;
+       while(cnt3--)
+       {
+	setcolor(i);
+	outtextxy(x1,y2,"\*");
+	x1=x1+(i+2);y2=y2+9;
+	i++;
+       }
+       x1=x+5;y2=y1+9;i=1;cnt3=9;
+	while(cnt3--)
+       {
+	setcolor(i);outtextxy(x1,y2,"\~");i++;x1=x1+10;
+       }
+	x1=x+45;y2=y1+25;settextstyle(1,0,3);setcolor(14);outtextxy(x1,y2,"\*");
+	settextstyle(11,0,1);
+	x1=x-5;y2=y1+9;i=1;
+       while(cnt4--)
+       {
+	setcolor(i);
+	outtextxy(x1,y2,"\*");
+	x1=x1-(i+2);y2=y2+9;
+	i++;
+       }
+       x1=x-5;y2=y1+9;i=1;cnt4=9;
+	while(cnt4--)
+       {
+	setcolor(i);outtextxy(x1,y2,"\~");i++;x1=x1-10;
+       }
+       x1=x-45;y2=y1+25;settextstyle(1,0,3);setcolor(14);outtextxy(x1,y2,"\*");
+
+}
+  void boom()
+  {
+  int freq1=100;int j1=1; int freq2=100;int d1=5; int j2=1;
+	int i;    int d2=5;    int freq3=100; int freq4=100; int freq5=240;
+	   for (i=0; i<85; i++)
+   {
+	sound(freq1);
+	delay(d1);
+	sound(freq2);
+	delay(d2);
+	sound(freq3);
+	delay(d1);
+	sound(freq4);
+	delay(d2);
+	sound(freq5);
+	delay(d1);
+       //	sound(freq6);
+	//delay(d1);
+	 if (i<80)
+	 {
+	freq1=freq1-j1;
+	freq2=freq2-j2;
+	freq3=freq3-j1;
+	freq4=freq4-j2;
+	freq5=freq5-j1;
+	  }
+   }
+   nosound();
+}
